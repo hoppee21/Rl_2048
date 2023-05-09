@@ -45,7 +45,7 @@ def match_image(descriptors, input_des):
     best_match = 0
     best_image = ''
     for image in descriptors:
-        matches = bf.knnMatch(descriptors[image], input_des, k=5)
+        matches = bf.knnMatch(descriptors[image], input_des, k=2)
         good = []
         for m, n in matches:
             if m.distance < 0.75 * n.distance:
